@@ -1,0 +1,97 @@
+{
+    
+    "Local Storage": {
+		"scope": "",
+		"prefix": "pct2",
+		"body": [
+			"console.log('page is ready')",
+			"var take_input_key=document.getElementById('take_input_key')",
+			"var take_input=document.getElementById('take_input')",
+			"var save_value_button=document.getElementById('save_value_button')",
+			"var localStorageValue=document.getElementById('localStorageValue')",
+			"var rdLS_button=document.getElementById('rdLS_button')",
+			"var del_data_button=document.getElementById('del_data_button')",
+			"save_value_button.onclick=function(){",
+			"localStorage.setItem(take_input_key.value,take_input.value);",
+			"}",
+			"rdLS_button.onclick=function(){",
+			"localStorageValue.textContent=localStorage.getItem(take_input_key.value);",
+			"}",
+			"del_data_button.onclick=function(){",
+			"localStorage.removeItem(take_input_key.value);",
+			"}"
+		],
+		"description": "This code for Local Storage script.js file"
+	},
+    "dockerDemo" : { 
+       
+      "prefix": "docker", 
+       
+      "body": [  
+		"FROM node: alpine",
+  		"COPY . /$1",
+  		"CMD node /$1/script.js"
+      ],
+      "description": "This code for Dockerfile"
+    },
+	"angularCode" : {
+		"prefix": "angular code",
+		"body": [
+			"<style></style>",
+			"<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>",
+			"<!-- Toolbar -->",
+			"<div class='content' role='main'>",
+			
+			  "<!-- Highlight Card -->",
+			  "<div class='card highlight-card card-small'>",
+				"<span>{{ title }} app is running!</span>",
+			  "</div>",
+			  "<form>",
+				"<div class='form-group' >",
+				  "<label for='exampleInputEmail1'>Email address</label>",
+				  "<input type='email' class='form-control' id='email' #email name='email' aria-describedby='emailHelp' placeholder='Enter email' >",
+				  
+				"</div>",
+			  "<div class='form-group'>",
+				"<label for='exampleInputPassword1'>Password</label>",
+				"<input type='password' class='form-control' name='pass' id='pass' #pass placeholder='Password' >",
+			  "</div>",
+			  "<button type='submit' class='btn btn-primary' (click)='clickme(email.value,pass.value)'>Submit</button>",
+			  
+			"</form>",
+			
+			"<div class='m-5'>",
+			  "<label >Email address : {{ demail }}</label><br>",
+			  "<label >Password: {{ dpass }}</label>",
+			"</div>",
+			
+			"</div>",
+
+			"<router-outlet></router-outlet>"
+		],
+		"description": "This code for angular html"
+	},
+	"angularTS" :{
+		"prefix": "angularTS",
+		"body": [
+			"import { Component } from '@angular/core';",
+
+			"@Component({",
+			  "selector: 'app-root',",
+			  "templateUrl: './app.component.html',",
+			  "styleUrls: ['./app.component.css']",
+			"})",
+			"export class AppComponent {",
+			  "title = 'shrinad';",
+			  "demail='';",
+			  "dpass='';",
+			  "clickme(email:string,pass:string) {" ,
+				  "this.demail=email;"  ,
+				  "this.dpass=pass;"  ,
+			   "}",
+			"}"
+		],
+		"description": "This code for angularTS"
+	}
+
+}

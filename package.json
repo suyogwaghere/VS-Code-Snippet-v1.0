@@ -1,0 +1,20 @@
+{
+  "name": "demoSnippet",
+  "displayName": "demoSnippet",
+  "description": "This is just demo snippet",
+  "version": "0.0.1",
+  "publisher": "SuyogWaghere",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

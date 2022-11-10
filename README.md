@@ -1,6 +1,6 @@
-# demoSnippet README
+# VS-Code-Snippet-v1.0 README
 
-This is the README for your extension "demoSnippet". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "VS-Code-Snippet-v1.0". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

@@ -2,9 +2,11 @@
   "name": "wtSnippet",
   "displayName": "wtSnippet",
   "description": "This is WebTechnology snippet",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "icon": "images/logo.png",
-  "repository": {"url": "https://github.com/suyogwaghere/VS-Code-Snippet-v1.0.git"},
+  "repository": {
+    "url": "https://github.com/suyogwaghere/VS-Code-Snippet-v1.0.git"
+  },
   "publisher": "SuyogWaghere",
   "engines": {
     "vscode": "^1.60.0"

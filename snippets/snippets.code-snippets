@@ -1,42 +1,88 @@
 {
-    
-    "Local Storage": {
-		"scope": "",
-		"prefix": "!@pct2",
+    "dashboard" :{
+		"prefix": "!@1dashboard",
 		"body": [
-			"console.log('page is ready')",
-			"var take_input_key=document.getElementById('take_input_key')",
-			"var take_input=document.getElementById('take_input')",
-			"var save_value_button=document.getElementById('save_value_button')",
-			"var localStorageValue=document.getElementById('localStorageValue')",
-			"var rdLS_button=document.getElementById('rdLS_button')",
-			"var del_data_button=document.getElementById('del_data_button')",
-			"save_value_button.onclick=function(){",
-			"localStorage.setItem(take_input_key.value,take_input.value);",
+			"const express = require('express')",
+			"const app = express()",
+
+			"app.get('/', function(req, res){",
+			   " res.sendFile(__dirname + '/index.html');",
+			"})",
+			
+			"app.listen(8080, function(error){",
+			   " if(error) throw error",
+			   " console.log('Server created Successfully on Port 8080')",
+			"})"
+		],
+		"description": "This code for dashboard"
+	},
+	"local storage" :{
+		"prefix": "!@2localStorage",
+		"body": [
+			"  // this newpage.html ",
+			"function saveData(){",
+				"let email,pass;",
+				"email = document.getElementById('email').value",
+				"pass = document.getElementById('pass').value",
+				"localStorage.setItem('email',email);",
+				"localStorage.setItem('email',pass);",
 			"}",
-			"rdLS_button.onclick=function(){",
-			"localStorageValue.textContent=localStorage.getItem(take_input_key.value);",
-			"}",
-			"del_data_button.onclick=function(){",
-			"localStorage.removeItem(take_input_key.value);",
+			"  // this index.html ",
+			"function getData(){",
+				"// <body onload='getData();''>",
+				"let email,pass;",
+				"email = localStorage.getItem('email');",
+				"pass = localStorage.getItem('pass');",
+				"document.getElementById('email').value = email;",
+				"document.getElementById('pass').value = pass;",
 			"}"
 		],
-		"description": "This code for Local Storage script.js file"
+		"description": "This code for Local Storage script tag file"
 	},
-    "dockerDemo" : { 
-       
-      "prefix": "!@docker", 
-       
-      "body": [  
+	"gitHub" :{
+		"prefix": "!@3git",
+		"body": [
+			"git init",
+			"git add .",
+			"git commit -m 'message here'",
+			"git remote add origin https://github.com/yourusername/yourreponame.git",
+			"git push -u origin master",
+			"git log",
+			"git status"
+		],
+		"description": "This code for "
+	},
+    "dockerDemo" : {      
+      	"prefix": "!@4docker", 
+      	"body": [  
+		"Docker commands",
+		"docker --version",
+		"docker images",
+		"docker build -t imagename .",
+		"docker run imagename",
+		"for app.js file",
+		"docker --version",
+		"docker images",
+		"cd demo",
+		"docker build -t getstarted .",
+		"docker run -dp 3000:3000 getstarted",
+		"for app.js file",
+		"console.log('Hi suyog');",
+		"console.log('docker');",
+		"for Dockerfile",
 		"FROM node: alpine",
   		"COPY . /$1",
   		"CMD node /$1/script.js"
-      ],
-      "description": "This code for Dockerfile"
+      	],
+      	"description": "This code for Dockerfile"
     },
 	"angularCode" : {
-		"prefix": "!@angular code",
+		"prefix": "!@5angular code",
 		"body": [
+			"angular commands",
+			"npm install @angular/cli",
+			"ng new project_name",
+			"ng serve",
 			"<style></style>",
 			"<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>",
 			"<!-- Toolbar -->",
@@ -67,14 +113,11 @@
 			
 			"</div>",
 
-			"<router-outlet></router-outlet>"
-		],
-		"description": "This code for angular html"
-	},
-	"angularTS" :{
-		"prefix": "!@angularTS",
-		"body": [
+			"<router-outlet></router-outlet>",
+
 			"import { Component } from '@angular/core';",
+
+			"",
 
 			"@Component({",
 			  "selector: 'app-root',",
@@ -82,7 +125,7 @@
 			  "styleUrls: ['./app.component.css']",
 			"})",
 			"export class AppComponent {",
-			  "title = 'shrinad';",
+			  "title = 'TE AIML';",
 			  "demail='';",
 			  "dpass='';",
 			  "clickme(email:string,pass:string) {" ,
@@ -90,12 +133,16 @@
 				  "this.dpass=pass;"  ,
 			   "}",
 			"}"
+
 		],
-		"description": "This code for angularTS"
+		"description": "This code for angular html and angularTS"
 	},
 	"nodeJS" :{
-		"prefix": "!@nodejs",
+		"prefix": "!@6nodejs",
 		"body": [
+			"npm init",
+			"npm install express",
+			"node server.js",
 			"const express = require('express')",
 			"const app = express()",
 
@@ -110,43 +157,116 @@
 		],
 		"description": "This code for static website using nodejs app.js"
 	},
-	"dashboard" :{
-		"prefix": "!@dashboard",
+	"crudAPI" :{
+		"prefix": "!@7api",
 		"body": [
+			"// this is for app.js",
 			"const express = require('express')",
+			"const mongoose = require('mongoose')",
+			"const url = 'mongodb://localhost/AlienDBex'",
+
 			"const app = express()",
 
-			"app.get('/', function(req, res){",
-			   " res.sendFile(__dirname + '/index.html');",
+			"mongoose.connect(url, {useNewUrlParser:true})",
+			"const con = mongoose.connection",
+
+			"con.on('open', () => {",
+			    "console.log('connected...')",
 			"})",
 			
-			"app.listen(8080, function(error){",
-			   " if(error) throw error",
-			   " console.log('Server created Successfully on Port 8080')",
-			"})"
+			"app.use(express.json())",
+			
+			"const alienRouter = require('./routes/aliens')",
+			"app.use('/aliens',alienRouter)",
+			
+			"app.listen(9000, () => {",
+			    "console.log('Server started')",
+			"})",
+			"// this is for models/alien.js",
+			"const mongoose = require('mongoose')",
+			"const alienSchema = new mongoose.Schema({",
+			    "name: {",
+			        "type: String,",
+			        "required: true",
+			    "},",
+			    "tech: {",
+			        "type: String,",
+			        "required: true",
+			    "},",
+			    "sub: {",
+			        "type: Boolean,",
+			        "required: true,",
+			        "default: false",
+			    "}",
+			"})",
+			"module.exports = mongoose.model('Alien',alienSchema)",
+			"// this is for routes/aliens.js",
+			"const express = require('express')",
+			"const router = express.Router()",
+			"const Alien = require('../models/alien')",
+
+
+			"router.get('/', async(req,res) => {",
+			    "try{",
+			           "const aliens = await Alien.find()",
+			           "res.json(aliens)",
+			    "}catch(err){",
+			        "res.send('Error ' + err)",
+			    "}",
+			"})",
+			
+			"router.get('/:id', async(req,res) => {",
+			    "try{",
+			           "const alien = await Alien.findById(req.params.id)",
+			           "res.json(alien)",
+			    "}catch(err){",
+			        "res.send('Error ' + err)",
+			    "}",
+			"})",
+
+			"router.post('/', async(req,res) => {",
+			    "const alien = new Alien({",
+			        "name: req.body.name,",
+			        "tech: req.body.tech,",
+			        "sub: req.body.sub",
+			    "})",
+			    "try{",
+			        "const a1 =  await alien.save()", 
+			        "res.json(a1)",
+			    "}catch(err){",
+			        "res.send('Error')",
+			    "}",
+			"})"	,
+			"router.patch('/:id',async(req,res)=> {",
+			    "try{",
+			        "const alien = await Alien.findById(req.params.id) ",
+			        "alien.sub = req.body.sub",
+			        "// alien.name = req.body.name",
+			        "// alien.tech = req.body.tech",
+			        "const a1 = await alien.save()",
+			        "res.json(a1)"   ,
+			    "}catch(err){",
+			        "res.send('Error')",
+			    "}",
+			
+			"})",
+			
+			"router.delete('/:id',async(req,res)=> {",
+			    "try{",
+			        "const alien = await Alien.findById(req.params.id) ",
+			        "const a1 = await alien.remove()",
+			        "res.json(a1)"   ,
+			    "}catch(err){",
+			        "res.send('Error')",
+			    "}",
+			
+			"})",
+			"module.exports = router",
 		],
-		"description": "This code for dashboard"
-	},
-	"bootstrap" :{
-		"prefix": "!@bstlinks",
-		"body": [
-			"<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' />",
-			"<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js' integrity='sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk' crossorigin='anonymous'></script>",
-			"<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js' integrity='sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK' crossorigin='anonymous'></script>",
-		],
-		"description": "This are bootstrap cdn links"
-	},
-	"jquery" :{
-		"prefix": "!@jqrlinks",
-		"body": [
-			"<link rel='stylesheet' href='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css' />",
-			"<script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>",
-			"<script src='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js'></script>"
-		],
-		"description": "This are JQuery cdn links"
+		"description": "This code for static website using nodejs app.js"
 	},
 	"jqueryMobile" :{
-		"prefix": "jqrcode",
+		"prefix": "!@8jquerycode",
 		"body": [
 			"<!---index-->",
 			"<div data-role='page'>",
@@ -200,30 +320,25 @@
 
 
 		],
-		"description": "This are JQuery cdn links"
+		"description": "This are JQuery mobile code"
 	},
-	"local storage" :{
-		"prefix": "!@localStorage",
+	"bootstrap" :{
+		"prefix": "!@cdnbootstraplinks",
 		"body": [
-			"  // this newpage.html ",
-			"function saveData(){",
-				"let email,pass;",
-				"email = document.getElementById('email').value",
-				"pass = document.getElementById('pass').value",
-				"localStorage.setItem('email',email);",
-				"localStorage.setItem('email',pass);",
-			"}",
-			"  // this index.html ",
-			"function getData(){",
-				"// <body onload='getData();''>",
-				"let email,pass;",
-				"email = localStorage.getItem('email');",
-				"pass = localStorage.getItem('pass');",
-				"document.getElementById('email').value = email;",
-				"document.getElementById('pass').value = pass;",
-			"}"
+			"<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' />",
+			"<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js' integrity='sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk' crossorigin='anonymous'></script>",
+			"<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js' integrity='sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK' crossorigin='anonymous'></script>",
 		],
 		"description": "This are bootstrap cdn links"
+	},
+	"jquery" :{
+		"prefix": "!@cdnjquerylinks",
+		"body": [
+			"<link rel='stylesheet' href='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css' />",
+			"<script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>",
+			"<script src='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js'></script>"
+		],
+		"description": "This are JQuery cdn links"
 	}
-
+		
 }

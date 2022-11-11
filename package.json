@@ -2,7 +2,7 @@
   "name": "wtSnippet",
   "displayName": "wtSnippet",
   "description": "This is WebTechnology snippet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icon": "images/logo.png",
   "galleryBanner": {
     "theme": "dark",

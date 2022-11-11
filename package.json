@@ -4,6 +4,10 @@
   "description": "This is WebTechnology snippet",
   "version": "1.0.0",
   "icon": "images/logo.png",
+  "galleryBanner": {
+    "theme": "dark",
+    "color": "#000000"
+  },
   "repository": {
     "url": "https://github.com/suyogwaghere/VS-Code-Snippet-v1.0.git"
   },

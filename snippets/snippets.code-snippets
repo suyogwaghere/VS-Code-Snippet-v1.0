@@ -92,6 +92,138 @@
 			"}"
 		],
 		"description": "This code for angularTS"
+	},
+	"nodeJS" :{
+		"prefix": "nodejs",
+		"body": [
+			"const express = require('express')",
+			"const app = express()",
+
+			"app.get('/', function(req, res){",
+			   " res.sendFile(__dirname + '/index.html');",
+			"})",
+			
+			"app.listen(8080, function(error){",
+			   " if(error) throw error",
+			   " console.log('Server created Successfully on Port 8080')",
+			"})"
+		],
+		"description": "This code for static website using nodejs app.js"
+	},
+	"dashboard" :{
+		"prefix": "dashboard",
+		"body": [
+			"const express = require('express')",
+			"const app = express()",
+
+			"app.get('/', function(req, res){",
+			   " res.sendFile(__dirname + '/index.html');",
+			"})",
+			
+			"app.listen(8080, function(error){",
+			   " if(error) throw error",
+			   " console.log('Server created Successfully on Port 8080')",
+			"})"
+		],
+		"description": "This code for dashboard"
+	},
+	"bootstrap" :{
+		"prefix": "bstlinks",
+		"body": [
+			"<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' />",
+			"<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js' integrity='sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk' crossorigin='anonymous'></script>",
+			"<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js' integrity='sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK' crossorigin='anonymous'></script>",
+		],
+		"description": "This are bootstrap cdn links"
+	},
+	"jquery" :{
+		"prefix": "jqrlinks",
+		"body": [
+			"<link rel='stylesheet' href='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css' />",
+			"<script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>",
+			"<script src='https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js'></script>"
+		],
+		"description": "This are JQuery cdn links"
+	},
+	"jqueryMobile" :{
+		"prefix": "jqrcode",
+		"body": [
+			"<!---index-->",
+			"<div data-role='page'>",
+		"<div data-role='header' data-theme='b'><center><h1>Simple JQuery Website</h1></center></div>",
+		"<div data-role='navbar'>",
+			"<ul>",
+				"<li><a href='index.html' rel='external' class='ui-btn-active'>Home</a></li>",
+				"<li><a href='loginregister.html' rel='external'>Login/Register</a></li>",
+			"</ul>",
+		"</div>",
+		"<center><h3>Products</h3></center>",
+		"<div class='content'>",
+			"<center> ",
+				"<div class='rows'><div><img src='image.jpg' height='250px' width='250px'></div></div>",
+			"</center>",
+		"</div><!---content close-->",
+		"<div data-role='footer' data-theme='b'> ",
+			"<center>",
+				"<div class='quicklinks'><h3> Quick Links</h3>",
+					"<a href='indexC.html' rel='external'>Home</a><br><br>",
+				"</div>",
+				"<p>TE AIML</p>",
+			"</center>",
+		"</div><!---footer close-->",
+	"</div>",
+				"<!---login-->",
+
+			"<div data-role='page'>",
+		"<div data-page='header' data-theme='b'>",
+			"<center><h1>Simple JQuery Website</h1></center>",
+	"</div>",
+		"<div data-role='navbar' data-grid='c'>",
+			"<ul>",
+				"<li><a href='indexC.html' rel='external'>Home</a></li>",
+				"<li><a href='loginregister.html' class='ui-btn-active'>Login/Register</a></li>",
+			"</ul>",
+		"</div class='content'>",
+		"<div> <center> <h2>Registration</h2></center></div>",
+		"<div data-role='content'>",
+			"<label> Full Name:</label>",
+			"<input type='text'> <br>",
+			"<label> email:</label>",
+			"<input type='Email'> <br>",
+			"<label> password:</label>",
+			"<input type='Password'> <br>",
+			"<input type='submit' value='Register'><br>",
+			"<center><a href='login.html'>Register</a></center>",
+		"</div>",
+	"</div>"
+
+
+
+		],
+		"description": "This are JQuery cdn links"
+	},
+	"local storage" :{
+		"prefix": "localStorage",
+		"body": [
+			"  // this newpage.html ",
+			"function saveData(){",
+				"let email,pass;",
+				"email = document.getElementById('email').value",
+				"pass = document.getElementById('pass').value",
+				"localStorage.setItem('email',email);",
+				"localStorage.setItem('email',pass);",
+			"}",
+			"  // this index.html ",
+			"function getData(){",
+				"// <body onload='getData();''>",
+				"let email,pass;",
+				"email = localStorage.getItem('email');",
+				"pass = localStorage.getItem('pass');",
+				"document.getElementById('email').value = email;",
+				"document.getElementById('pass').value = pass;",
+			"}"
+		],
+		"description": "This are bootstrap cdn links"
 	}
 
 }
